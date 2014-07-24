@@ -2,16 +2,9 @@ module("util", package.seeall)
 
 -- cclog
 function cclog(...)
+    local inspect = require "src/inspect"
     for k, v in ipairs{...} do
-      if type(v) =="table" then
-        for k1, v1 in pairs(v) do 
-            print("\t", k1, v1)
-        end
-      elseif type(v) == "userdata" then
-            print("userdata")  
-      else 
-        print(string.format(...))
-      end
+      print(inspect(v))
     end
 end
 

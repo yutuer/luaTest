@@ -19,14 +19,13 @@ local function CrashTest()
     --Sum of all action's duration is 1.5 second.
     child:runAction(cc.RotateBy:create(1.5, 90))
     child:runAction(cc.Sequence:create(cc.DelayTime:create(1.4),cc.FadeOut:create(1.1)))
-    
     local function removeThis()
         ret:getParent():removeChild(ret, true)
         Helper.nextAction()
     end
 
     --After 1.5 second, self will be removed.
-    ret:runAction( cc.Sequence:create(cc.DelayTime:create(1.4),cc.CallFunc:create(removeThis)))
+    ret:runAction(cc.Sequence:create(cc.DelayTime:create(1.4),cc.CallFunc:create(removeThis)))
     return ret
 end
 
@@ -183,7 +182,6 @@ function ActionManagerTestMain()
     Helper.index = 1
     cc.Director:getInstance():setDepthTest(true)
     local scene = cc.Scene:create()
-
     Helper.createFunctionTable = {
         CrashTest,
         LogicTest,
@@ -191,8 +189,6 @@ function ActionManagerTestMain()
         RemoveTest,
         ResumeTest
     }
-    scene:addChild(CrashTest())
-    scene:addChild(CreateBackMenuItem())
-    return scene
+    return Helper.newScene()
 end
 
