@@ -463,8 +463,5 @@ function EaseActionsTest()
 		SpeedTest
     }
 
-	scene:addChild(SpriteEase())
-	scene:addChild(CreateBackMenuItem())
-
-	return scene
+	return Helper.newScene()
 end
