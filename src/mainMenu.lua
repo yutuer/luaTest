@@ -3,6 +3,7 @@ require "src/testResource"
 require "src/helper"
 
 require "src/ActionManagerTest/ActionManagerTest"
+require "src/ActionsEaseTest/ActionsEaseTest"
 
 local LINE_SPACE = 40
 
@@ -10,7 +11,8 @@ local CurPos = {x = 0, y = 0}
 local BeginPos = {x = 0, y = 0}
 
 local _allTests = {
-  { isSupported = true, name = "ActionManagerTest", create_func= ActionManagerTestMain}
+  { isSupported = true, name = "ActionManagerTest", create_func= ActionManagerTestMain},
+  { isSupported = true, name = "ActionsEaseTest", create_func = EaseActionsTest}
 }
 
 local TESTS_COUNT = #_allTests
@@ -34,7 +36,7 @@ function CreateTestMenu()
 
   -- add close menu
   local s = director:getWinSize()
-  
+
   local CloseItem = cc.MenuItemImage:create(s_pPathClose, s_pPathClose)
   CloseItem:registerScriptTapHandler(closeCallback)
   CloseItem:setPosition(cc.p(s.width - 30, s.height - 30))
@@ -74,6 +76,6 @@ function CreateTestMenu()
   MainMenu:setContentSize(cc.size(s.width, (TESTS_COUNT + 1) * (LINE_SPACE)))
   MainMenu:setPosition(CurPos.x, CurPos.y)
   menuLayer:addChild(MainMenu)
-  
+
   return menuLayer
 end
