@@ -1,3 +1,4 @@
+require "util"
 local    kTagNode = 0
 local    kTagGrossini = 1
 local    kTagSequence = 2
@@ -178,7 +179,7 @@ end
 
 
 function ActionManagerTestMain()
-    cclog("ActionManagerTestMain")
+    util.cclog("ActionManagerTestMain")
     Helper.index = 1
     cc.Director:getInstance():setDepthTest(true)
     local scene = cc.Scene:create()

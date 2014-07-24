@@ -7,6 +7,8 @@ function cclog(...)
         for k1, v1 in pairs(v) do 
             print("\t", k1, v1)
         end
+      elseif type(v) == "userdata" then
+            print("userdata")  
       else 
         print(string.format(...))
       end
