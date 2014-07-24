@@ -4,7 +4,11 @@ module("util", package.seeall)
 function cclog(...)
     local inspect = require "src/inspect"
     for k, v in ipairs{...} do
-      print(inspect(v))
+      if type(v) == "userdata" then
+        print(inspect(getmetatable(v)))      
+      else
+        print(inspect(v))
+      end
     end
 end
 

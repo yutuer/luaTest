@@ -83,7 +83,6 @@ local function PauseTest()
             pDirector:getActionManager():addAction(action, grossini, true)
 
             schedulerEntry = scheduler:scheduleScriptFunc(unpause, 3.0, false)
-
         elseif event == "exit" then
             if schedulerEntry ~= nil then
                 scheduler:unscheduleScriptEntry(schedulerEntry)

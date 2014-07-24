@@ -74,6 +74,6 @@ function CreateTestMenu()
   MainMenu:setContentSize(cc.size(s.width, (TESTS_COUNT + 1) * (LINE_SPACE)))
   MainMenu:setPosition(CurPos.x, CurPos.y)
   menuLayer:addChild(MainMenu)
-
+  
   return menuLayer
 end
