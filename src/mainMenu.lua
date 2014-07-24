@@ -37,8 +37,7 @@ function CreateTestMenu()
   
   local CloseItem = cc.MenuItemImage:create(s_pPathClose, s_pPathClose)
   CloseItem:registerScriptTapHandler(closeCallback)
-  CloseItem:setScale(0.5)
-  CloseItem:setPosition(cc.p(s.width - 40, s.height - 30))
+  CloseItem:setPosition(cc.p(s.width - 30, s.height - 30))
 
   local CloseMenu = cc.Menu:create()
   CloseMenu:setPosition(0, 0)

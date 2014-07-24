@@ -7,8 +7,15 @@ require "src/mainMenu"
 
 local glView = cc.Director:getInstance():getOpenGLView()
 local screenSize = glView:getFrameSize()
---util.cclog(screenSize)
 local fileUtils = cc.FileUtils:getInstance()
+
+local designSize = cc.size(480, 320)
+
+if  screenSize.height > 320 then
+  local resourceSize = cc.size(960, 640);
+  cc.Director:getInstance():setContentScaleFactor(resourceSize.height/designSize.height);
+end
+
 
 local targetPlatform = cc.Application:getInstance():getTargetPlatform()
 local resPrefix = ""
@@ -53,7 +60,7 @@ end
 
 fileUtils:setSearchPaths(searchPaths)
 
-util.cclog(fileUtils:getSearchPaths())
+--util.cclog(fileUtils:getSearchPaths())
 
 local scene = cc.Scene:create()
 scene:addChild(CreateTestMenu())
