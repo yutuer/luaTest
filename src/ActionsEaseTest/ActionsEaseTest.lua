@@ -16,15 +16,15 @@ local function createSimpleDelayTime()
 end
 
 local function positionForTwo()
-	grossini:setPosition(cc.p(60, s.height * 1 / 5))
+	  grossini:setPosition(cc.p(60, s.height * 1 / 5))
     tamara:setPosition(cc.p(60, s.height * 4 / 5))
     kathia:setVisible(false)
 end
 
 local function getBaseLayer()
-	local layer = cc.Layer:create()
+	  local layer = cc.Layer:create()
 
-	grossini = cc.Sprite:create(s_pPathGrossini)
+	  grossini = cc.Sprite:create(s_pPathGrossini)
     tamara = cc.Sprite:create(s_pPathSister1)
     kathia = cc.Sprite:create(s_pPathSister2)
 
@@ -36,9 +36,9 @@ local function getBaseLayer()
     kathia:setPosition(cc.p(60, s.height * 2.5 / 5))
     tamara:setPosition(cc.p(60, s.height * 4 / 5))
 
-	Helper.initWithLayer(layer)
+	  Helper.initWithLayer(layer)
 
-	return layer
+	  return layer
 end
 
 -----------------------------------
@@ -95,9 +95,9 @@ end
 --	SpriteEaseInOut
 -----------------------------------
 local function SpriteEaseInOut()
-	local layer = getBaseLayer()
+	  local layer = getBaseLayer()
 
-	local move = createSimpleMoveBy()
+	  local move = createSimpleMoveBy()
 
     local move_ease_inout1 = cc.EaseInOut:create(createSimpleMoveBy(), 0.65)
     local move_ease_inout_back1 = move_ease_inout1:reverse()
@@ -117,8 +117,8 @@ local function SpriteEaseInOut()
     kathia:runAction(cc.RepeatForever:create(seq2))
     grossini:runAction(cc.RepeatForever:create(seq3))
 
-	Helper.titleLabel:setString("EaseInOut and rates")
-	return layer
+  	Helper.titleLabel:setString("EaseInOut and rates")
+  	return layer
 end
 
 -----------------------------------
@@ -416,7 +416,7 @@ end
 local function SpeedTest()
 	local layer = getBaseLayer()
 
-	local jump1 = cc.JumpBy:create(4, cc.p(- s.width + 80, 0), 100, 4)
+	  local jump1 = cc.JumpBy:create(4, cc.p(- s.width + 80, 0), 100, 4)
     local jump2 = jump1:reverse()
     local rot1 = cc.RotateBy:create(4, 360 * 2)
     local rot2 = rot1:reverse()

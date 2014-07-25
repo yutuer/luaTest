@@ -4,6 +4,7 @@ require "src/helper"
 
 require "src/ActionManagerTest/ActionManagerTest"
 require "src/ActionsEaseTest/ActionsEaseTest"
+require "src/ActionsProgressTest/ActionsProgressTest"
 
 local LINE_SPACE = 40
 
@@ -12,7 +13,8 @@ local BeginPos = {x = 0, y = 0}
 
 local _allTests = {
   { isSupported = true, name = "ActionManagerTest", create_func= ActionManagerTestMain},
-  { isSupported = true, name = "ActionsEaseTest", create_func = EaseActionsTest}
+  { isSupported = true, name = "ActionsEaseTest", create_func = EaseActionsTest},
+  { isSupported = true,  name = "ActionsProgressTest" , create_func=ProgressActionsTest}
 }
 
 local TESTS_COUNT = #_allTests
