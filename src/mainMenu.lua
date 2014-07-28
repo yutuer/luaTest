@@ -4,13 +4,17 @@ require "Cocos2dConstants"
 require "Opengl"
 require "OpenglConstants"
 require "src/testResource"
+require "src/VisibleRect"
 require "src/helper"
+
 
 require "src/ActionManagerTest/ActionManagerTest"
 require "src/ActionsEaseTest/ActionsEaseTest"
 require "src/ActionsProgressTest/ActionsProgressTest"
 require "src/ActionsTest/ActionsTest"
 require "src/AssetsManagerTest/AssetsManagerTest"
+require "src/ClickAndMoveTest/ClickAndMoveTest"
+require "src/CocoStudioTest/CocoStudioTest"
 
 local LINE_SPACE = 40
 
@@ -22,7 +26,9 @@ local _allTests = {
   { isSupported = true, name = "ActionsEaseTest", create_func = EaseActionsTest},
   { isSupported = true,  name = "ActionsProgressTest" , create_func=ProgressActionsTest},
   { isSupported = true,  name = "ActionsTest" , create_func = ActionsTest},
-  { isSupported = true,  name = "AssetsManagerTest" , create_func = AssetsManagerTestMain}
+  { isSupported = true,  name = "AssetsManagerTest" , create_func = AssetsManagerTestMain},
+  { isSupported = true,  name = "ClickAndMoveTest" , create_func=ClickAndMoveTest},
+  { isSupported = true,  name = "CocoStudioTest", create_func=CocoStudioTestMain}
 }
 
 local TESTS_COUNT = #_allTests
